@@ -1,0 +1,4 @@
+form .error input, form .error textarea, form input.error, form textarea.error {
+	color: #b94a48;
+	border-color: #ee5f5b;
+}
