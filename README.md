@@ -16,7 +16,7 @@ Thank you for considering contributing to the ForgePHP framework! The contributi
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within ForgePHP, please send an e-mail to Zachary Jenkins at maliskoleather@gmail.com.
+If you discover a security vulnerability within ForgePHP, please send an e-mail to Zach Jenkins at maliskoleather@gmail.com.
 
 ## License
 
