@@ -93,6 +93,36 @@ if( Foundation::$environment == Foundation::DEVELOPMENT )
         ) )
     ;
 
-    // unit test
+    // unit testing
+
+    //
+    // User Guide
+    //
+
+    // Static file serving (CSS, JS, images)
+    Route::get( 'guide-media(/<file>)', array('file' => '.+'))
+        ->defaults(array(
+            'controller' => 'Userguide',
+            'action'     => 'media',
+            'file'       => NULL,
+    ));
+
+    // API Browser
+    Route::get( 'guide-api(/<class>)', array('class' => '[a-zA-Z0-9_]+'))
+        ->defaults(array(
+            'controller' => 'Userguide',
+            'action'     => 'api',
+            'class'      => NULL,
+    ));
+
+    // User guide pages, in modules
+    Route::get( 'guide(/<module>(/<page>))', array(
+            'page' => '.+',
+        ))
+        ->defaults(array(
+            'controller' => 'Userguide',
+            'action'     => 'docs',
+            'module'     => '',
+    ));
 
 }
