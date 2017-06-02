@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Controller;
+
+use Forge\LogReader\Controller as LogReader_Controller;
 
 /**
  * LogReader Controller
@@ -8,7 +12,7 @@
  * @author     SuperFan Team <dev@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Controller_LogReader extends LogReader_Controller
+class LogReader extends LogReader_Controller
 {
 	// Messages page
 	public function action_index()

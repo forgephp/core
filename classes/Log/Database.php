@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Log;
 
 /** 
  * Log DB
@@ -9,7 +11,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Log_Database extends Log_Writer
+class Database extends Writer
 {	
 	// Table name to write log data to
 	protected $_table;

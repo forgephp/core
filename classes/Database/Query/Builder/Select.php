@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Database\Query\Builder;
 
 /**
  * Database query builder for SELECT statements.
@@ -8,7 +10,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Database_Query_Builder_Select extends Database_Query_Builder_Where
+class Select extends Where
 {
 	// SELECT ...
 	protected $_select = array();

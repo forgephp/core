@@ -1,4 +1,10 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Config\File;
+
+use Forge\Arr;
+use Forge\Foundation;
+use Forge\Config\Reader as Config_Reader;
 
 /**
  * File-based configuration reader. Multiple configuration directories can be
@@ -9,7 +15,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Config_File_Reader implements Config_Reader
+class Reader implements Config_Reader
 {
     /**
      * The directory where config files are located

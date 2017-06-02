@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Config;
+
+use Forge\Config\File\Reader;
 
 /**
  * File-based configuration reader. Multiple configuration directories can be
@@ -9,7 +13,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Config_File extends Config_File_Reader
+class File extends Reader
 {
     // @see Config_File_Reader
 }

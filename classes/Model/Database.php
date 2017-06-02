@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Model;
+
+use Forge\Model;
 
 /** 
  * Database Model base class.
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-abstract class Model_Database extends Model
+abstract class Database extends Model
 {
 	/**
 	 * Create a new model instance. A [Database] instance or configuration

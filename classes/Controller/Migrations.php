@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Controller;
 
 /**
  * Migrations
@@ -10,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Controller_Migrations extends Controller_Template
+class Migrations extends Template
 {
 	public $template = 'migrations';
 

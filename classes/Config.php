@@ -1,4 +1,13 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge;
+
+use Forge\Arr;
+use Forge\Exception;
+use Forge\Config\Group;
+use Forge\Config\Reader;
+use Forge\Config\Source;
+use Forge\Config\Writer;
 
 /**
  * Wrapper for configuration arrays. Multiple configuration readers can be
@@ -35,7 +44,7 @@ class Config
      * @param   boolean          $first  add the reader as the first used object
      * @return  $this
      */
-    public function attach( Config_Source $source, $first=TRUE )
+    public function attach( Source $source, $first=TRUE )
     {
         if( $first === TRUE )
         {
@@ -62,7 +71,7 @@ class Config
      * @param   Config_Source    $source instance
      * @return  $this
      */
-    public function detach( Config_Source $source )
+    public function detach( Source $source )
     {
         if( ( $key = array_search( $source, $this->_sources ) ) !== FALSE )
         {
@@ -88,17 +97,17 @@ class Config
     {
         if( ! count( $this->_sources ) )
         {
-            throw new Foundation_Exception( 'No configuration sources attached' );
+            throw new Exception( 'No configuration sources attached' );
         }
 
         if( empty( $group ) )
         {
-            throw new Foundation_Exception( "Need to specify a config group" );
+            throw new Exception( "Need to specify a config group" );
         }
 
         if( ! is_string( $group ) )
         {
-            throw new Foundation_Exception( "Config group must be a string" );
+            throw new Exception( "Config group must be a string" );
         }
 
         if( strpos( $group, '.' ) !== FALSE )
@@ -124,7 +133,7 @@ class Config
 
         foreach( $sources as $source )
         {
-            if( $source instanceof Config_Reader )
+            if( $source instanceof Reader )
             {
                 if( $source_config = $source->load( $group ) )
                 {
@@ -133,7 +142,7 @@ class Config
             }
         }
 
-        $this->_groups[$group] = new Config_Group( $this, $group, $config );
+        $this->_groups[$group] = new Group( $this, $group, $config );
 
         if( isset( $path ) )
         {
@@ -176,7 +185,7 @@ class Config
     {
         foreach( $this->_sources as $source )
         {
-            if( ! ( $source instanceof Config_Writer ) )
+            if( ! ( $source instanceof Writer ) )
             {
                 continue;
             }

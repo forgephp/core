@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Model;
+
+use Forge\ORM;
 
 /**
  * Migration Model
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Model_Migration extends ORM
+class Migration extends ORM
 {
 	protected $_table_columns = array(
 		'id'         => array('type' => 'int'),

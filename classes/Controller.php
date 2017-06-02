@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge;
 
 /**
  * Abstract controller class. Controllers should only be created using a [Request].

@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Task\Generate;
+
+use Forge\Task\Generate;
 
 /**
  * Generates new Generator types from templates, together with associated unit
@@ -70,7 +74,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Task_Generate_Generator extends Task_Generate
+class Generator extends Generate
 {
 	/**
 	 * @var  array  The task options

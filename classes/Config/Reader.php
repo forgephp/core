@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Config;
+
+use Forge\Config\Source;
 
 /**
  * Interface for config readers
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-interface Config_Reader extends Config_Source
+interface Reader extends Source
 {
 
     /**

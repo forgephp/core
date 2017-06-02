@@ -1,4 +1,12 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Request;
+
+use Forge\Request;
+use Forge\Response;
+use Forge\Exception;
+use Forge\Request\Client;
+use Forge\HTTP\Exception as HTTP_Exception;
 
 /**
  * Request Client for internal execution
@@ -8,7 +16,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Request_Internal extends Request_Client
+class Internal extends Client
 {
     /**
      * @var    array
@@ -28,7 +36,7 @@ class Request_Internal extends Request_Client
     public function execute_request( Request $request, Response $response )
     {
         // Create the class prefix
-        $prefix = 'Controller_';
+        $prefix = 'App\Controller\\';
 
         // Directory
         $directory = $request->directory();
@@ -71,11 +79,11 @@ class Request_Internal extends Request_Client
                 }
 
                 // Load the controller using reflection
-                $class = new ReflectionClass( $prefix . $controller );
+                $class = new \ReflectionClass( $prefix . $controller );
 
                 if( $class->isAbstract() )
                 {
-                    throw new Foundation_Exception(
+                    throw new Exception(
                         'Cannot create instances of abstract :controller',
                         array(
                             ':controller' => $prefix . $controller
@@ -95,7 +103,7 @@ class Request_Internal extends Request_Client
                 if( ! $response instanceof Response )
                 {
                     // Controller failed to return a Response.
-                    throw new Foundation_Exception( 'Controller failed to return a Response' );
+                    throw new Exception( 'Controller failed to return a Response' );
                 }
             }
         }
@@ -113,7 +121,7 @@ class Request_Internal extends Request_Client
         catch( Exception $e )
         {
             // Generate an appropriate Response object
-            $response = Foundation_Exception::_handler( $e );
+            $response = Exception::_handler( $e );
         }
 
         // Restore the previous request

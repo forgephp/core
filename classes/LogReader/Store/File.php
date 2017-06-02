@@ -1,4 +1,9 @@
-<?php defined('SYSPATH') or die('No direct script access.');
+<?php
+
+namespace Forge\LogReader\Store;
+
+use Forge\LogReader\Store;
+
 /**
  * LogReader
  * 
@@ -10,7 +15,7 @@
  * @copyright   (c) 2014 Milan Magyar
  * @license     MIT
  */
-class Kohana_LogReader_Store_File extends LogReader_Store
+class File extends Store
 {
 	/**
 	 * Returns the log message by Id.

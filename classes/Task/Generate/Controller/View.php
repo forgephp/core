@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Task\Generate\Controller;
+
+use Forge\Task\Generate\Controller;
 
 /**
  * Generates template controllers with associated view files. The files can
@@ -29,7 +33,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Task_Generate_Controller_View extends Task_Generate_Controller
+class View extends Controller
 {
 	/**
 	 * Creates a generator builder with the given configuration options.

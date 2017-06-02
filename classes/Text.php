@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge;
+
+use Forge\UTF8;
 
 /**
  * Text helper class. Provides simple methods for working with text.
@@ -268,7 +272,7 @@ class Text
     public static function ucfirst( $string, $delimiter='-' )
     {
         // Put the keys back the Case-Convention expected
-        return implode( $delimiter, array_map( 'UTF8::ucfirst', explode( $delimiter, $string ) ) );
+        return implode( $delimiter, array_map( '\Forge\UTF8::ucfirst', explode( $delimiter, $string ) ) );
     }
 
     /**

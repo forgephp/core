@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Controller;
 
 /**
  * Codebench — A benchmarking module.
@@ -9,7 +11,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Controller_Codebench extends Controller_Template
+class Codebench extends Template
 {
 	// The codebench view
 	public $template = 'codebench';

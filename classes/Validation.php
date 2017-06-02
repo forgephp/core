@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge;
+
+use Forge\Valid;
 
 /**
  * Array and variable validation.
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Validation implements ArrayAccess
+class Validation implements \ArrayAccess
 {
     /**
      * Creates a new Validation instance.

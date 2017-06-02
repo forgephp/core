@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Migrations\Driver;
+
+use Forge\Migrations\Driver;
 
 /**
  * 
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Migrations_Driver_MySQL extends Migrations_Driver
+class MySQL extends Driver
 {
 	public function __construct( $group, $db )
 	{

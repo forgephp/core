@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge;
 
 /** 
  * Log
@@ -56,18 +58,18 @@ class Log
 	protected $_writers = array();
 
 	// Get the singleton instance of this class and enable writing at shutdown.
-	public static function instance()
+	public final static function instance()
 	{
-		if (Log::$_instance === NULL)
+		if( self::$_instance === NULL )
 		{
 			// Create a new instance
-			Log::$_instance = new Log;
+			self::$_instance = new Log;
 
 			// Write the logs at shutdown
 			register_shutdown_function(array(Log::$_instance, 'write'));
 		}
 
-		return Log::$_instance;
+		return self::$_instance;
 	}
 
 	public static function level_name( $id )
@@ -172,8 +174,8 @@ class Log
 	// Returns a date/time string with the specified timestamp format
 	public static function formatted_time( $datetime_str = 'now', $timestamp_format = 'Y-m-d H:i:s', $timezone = 'America/Chicago' )
 	{
-		$tz   = new DateTimeZone( $timezone ? $timezone : date_default_timezone_get() );
-		$time = new DateTime( $datetime_str, $tz );
+		$tz   = new \DateTimeZone( $timezone ? $timezone : date_default_timezone_get() );
+		$time = new \DateTime( $datetime_str, $tz );
 
 		// Convert the time back to the expected timezone if required (in case the datetime_str provided a timezone,
 		// offset or unix timestamp. This also ensures that the timezone reported by the object is correct on HHVM

@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Config\Database;
+
+use Forge\Config\Reader as Config_Reader;
 
 /**
  * Database reader for the config system
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Config_Database_Reader implements Config_Reader
+class Reader implements Config_Reader
 {
 	protected $_db_instance;
 

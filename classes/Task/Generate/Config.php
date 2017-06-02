@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Task\Generate;
+
+use Forge\Task\Generate;
 
 /**
  * Generates configuration files, optionally with simple config entries
@@ -40,7 +44,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Task_Generate_Config extends Task_Generate
+class Config extends Generate
 {
 	/**
 	 * @var  array  The task options

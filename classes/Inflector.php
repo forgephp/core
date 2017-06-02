@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge;
 
 /**
  * Inflector helper class. Inflection is changing the form of a word based on

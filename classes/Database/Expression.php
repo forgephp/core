@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Database;
 
 /**
  * Database expressions can be used to add unescaped SQL fragments to a
@@ -14,7 +16,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Database_Expression
+class Expression
 {
 	// Unquoted parameters
 	protected $_parameters;

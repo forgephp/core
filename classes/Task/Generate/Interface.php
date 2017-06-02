@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Task\Generate;
+
+use Forge\Task\Generate\Class;
 
 /**
  * Generates application interfaces from templates. The interface can be
@@ -53,7 +57,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Task_Generate_Interface extends Task_Generate_Class
+class Interface extends Class
 {
 	/**
 	 * @var  array  The task options

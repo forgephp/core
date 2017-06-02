@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Minion;
 
 /** 
  * @package    SuperFan
@@ -6,7 +8,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Minion_CLI
+class CLI
 {
 	public static $wait_msg = 'Press any key to continue...';
 

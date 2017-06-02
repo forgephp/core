@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Session;
 
 /**
  * @package    SuperFan
@@ -6,7 +8,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Session_Exception extends Foundation_Exception
+class Exception extends \Forge\Exception
 {
 	const SESSION_CORRUPT = 1;
 }

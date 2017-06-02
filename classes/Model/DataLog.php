@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Model;
+
+use Forge\ORM;
 
 /**
  * DataLog Model
@@ -9,7 +13,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Model_DataLog extends ORM
+class DataLog extends ORM
 {
     protected $_table_name = 'datalog';
 

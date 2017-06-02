@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge;
 
 /**
  * A port of [phputf8](http://phputf8.sourceforge.net/) to a unified set

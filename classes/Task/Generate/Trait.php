@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Task\Generate;
 
 /**
  * Generates application traits from templates. The trait can be created in
@@ -52,7 +54,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Task_Generate_Trait extends Task_Generate_Class
+class Trait extends Class
 {
 	/**
 	 * @var  array  The task options

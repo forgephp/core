@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge;
 
 /** 
  * Debug
@@ -205,13 +207,13 @@ class Debug
 	// when you want to display a shorter path.
 	public static function path( $file )
 	{
-		if( strpos( $file, APPDIR ) === 0 )
+		if( strpos( $file, \FORGE\APP ) === 0 )
 		{
-			$file = 'APPLICATION'.DIRECTORY_SEPARATOR.substr($file, strlen(APPDIR));
+			$file = 'FORGE\APPLICATION'.DIRECTORY_SEPARATOR.substr($file, strlen( \FORGE\APP ));
 		}
-		if( strpos( $file, FOUNDATION ) === 0 )
+		if( strpos( $file, \FORGE\FOUNDATION ) === 0 )
 		{
-			$file = 'FOUNDATION'.DIRECTORY_SEPARATOR.substr($file, strlen(FOUNDATION));
+			$file = 'FORGE\FOUNDATION'.DIRECTORY_SEPARATOR.substr($file, strlen( \FORGE\FOUNDATION ));
 		}
 
 		return $file;

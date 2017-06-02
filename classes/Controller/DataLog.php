@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Controller;
+
+use Forge\Controller;
 
 /**
  * DataLog
@@ -9,7 +13,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Controller_DataLog extends Controller
+class DataLog extends Controller
 {
 	public function before()
 	{

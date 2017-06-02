@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Generator;
+
+use Forge\View as Forge_View;
 
 /**
  * Generator View class.
@@ -14,7 +18,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Generator_View extends View
+class View extends Forge_View
 {
 	/**
 	 * Returns a new Generator_View object.

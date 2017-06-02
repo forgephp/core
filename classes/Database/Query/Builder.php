@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Database\Query;
+
+use Forge\Database\Query;
 
 /**
  * Database query builder.
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-abstract class Database_Query_Builder extends Database_Query
+abstract class Builder extends Query
 {
 	/**
 	 * Compiles an array of JOIN statements into an SQL partial.

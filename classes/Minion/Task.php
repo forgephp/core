@@ -1,4 +1,11 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Minion;
+
+use Forge\Arr;
+use Forge\View;
+use Forge\Validation;
+use Forge\Minion\Exception\InvalidTask;
 
 /**
  * Interface that all minion tasks must implement
@@ -8,7 +15,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-abstract class Minion_Task
+abstract class Task
 {
 	/**
 	 * The separator used to separate different levels of tasks
@@ -60,7 +67,7 @@ abstract class Minion_Task
 			return '';
 		}
 
-		return 'Task_' . implode( '_', array_map( 'ucfirst', explode( self::$task_separator, $task ) ) );
+		return '\Forge\Task\\' . implode( '\\', array_map( 'ucfirst', explode( self::$task_separator, $task ) ) );
 	}
 
 	/**
@@ -107,7 +114,7 @@ abstract class Minion_Task
 
 		if( ! class_exists( $class ) )
 		{
-			throw new Minion_Exception_InvalidTask(
+			throw new InvalidTask(
 				"Task ':task' is not a valid minion task",
 				array( ':task' => $class )
 			);
@@ -115,9 +122,9 @@ abstract class Minion_Task
 
 		$class = new $class;
 
-		if( ! $class instanceof Minion_Task )
+		if( ! $class instanceof Task )
 		{
-			throw new Minion_Exception_InvalidTask(
+			throw new InvalidTask(
 				"Task ':task' is not a valid minion task",
 				array( ':task' => $class )
 			);

@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Session;
+
+use Forge\Session;
 
 /**
  * Cookie-based session class.
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Session_Cookie extends Session
+class Cookie extends Session
 {
 	/**
 	 * @param   string  $id  session id

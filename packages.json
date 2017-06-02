@@ -1,3 +1,74 @@
-[
-    'paginate': "https://github.com/forgephp/paginate.git",
-]
+{
+    "paginate": {
+        "url": "https://github.com/forgephp/paginate.git",
+        "description": "Pagination support for Database_Result objects."
+    },
+    "slack": {
+        "url": "https://github.com/stefanhaneveer/GitElephant.git",
+        "description": "Slack Integration."
+    },
+    "blade": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "Add Laravel 'Blade' view support."
+    },
+    "mongodb": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "Database Driver for MongoDB."
+    },
+    "postgresql": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "Database Driver for PostgreSQL."
+    },
+    "dataflow": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "Translates between XML, YAML, JSON, JSON-P, and serialized PHP."
+    },
+    "api": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "RESTful API support."
+    },
+    "storage": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "Storage abstraction supporting Amazon S3, Rackspace Cloud Files, EMC Atmos, FTP, and local file system."
+    },
+    "subdomain": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "Capture the current subdomain and define custom routes."
+    },
+    "minify": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "Minify and compact JS and CSS assets."
+    },
+    "compress": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "Media compression package."
+    },
+    "mustache": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "Support for Mustache views."
+    },
+    "cart": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "Shopping Cart and Checkout Tools."
+    },
+    "twig": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "Support for Twig views."
+    },
+    "mailbag": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "Queue system for sending mail."
+    },
+    "google_otp": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "One Time Password Authentication, for use with Google Authenticator."
+    },
+    "testbench": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "Tool for developing and testing new packages."
+    },
+    "geoip": {
+        "url": "https://github.com/forgephp/.git",
+        "description": "GeoIP services."
+    }
+}

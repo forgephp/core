@@ -1,4 +1,12 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\HTTP;
+
+use Forge\Text;
+use Forge\Cookie;
+use Forge\Response;
+use Forge\Foundation;
+use Forge\HTTP\Response as HTTP_Response;
 
 /**
  * The HTTP_Header class provides an Object-Orientated interface
@@ -11,7 +19,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class HTTP_Header extends ArrayObject
+class Header extends \ArrayObject
 {
     // Default Accept-* quality value if none supplied
     const DEFAULT_QUALITY = 1;

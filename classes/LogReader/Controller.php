@@ -1,4 +1,9 @@
-<?php defined('SYSPATH') or die('No direct script access.');
+<?php
+
+namespace Forge\LogReader;
+
+use Forge\Controller as Forge_Controller;
+
 /**
  * LogReader
  * 
@@ -10,7 +15,7 @@
  * @copyright   (c) 2014 Milan Magyar
  * @license     MIT
  */
-class Kohana_LogReader_Controller extends Kohana_Controller
+class Controller extends Forge_Controller
 {
 	/**
 	 * Autheticated user object.

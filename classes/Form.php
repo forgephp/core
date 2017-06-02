@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge;
 
 /**
  * Form helper class. Unless otherwise noted, all generated HTML will be made

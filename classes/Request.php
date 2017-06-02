@@ -1,4 +1,14 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge;
+
+use \Forge\Request\Internal;
+use \Forge\Request\External;
+use \Forge\Request\Client as Request_Client;
+use \Forge\Request\Exception as Request_Exception;
+use \Forge\HTTP\Header as HTTP_Header;
+use \Forge\HTTP\Request as HTTP_Request;
+use \Forge\HTTP\Exception as HTTP_Exception;
 
 /**
  * Request. Uses the Route class to determine what
@@ -587,7 +597,7 @@ class Request implements HTTP_Request
             $this->_uri = trim( $uri, '/' );
 
             // Apply the client
-            $this->_client = new Request_Internal( $client_params );
+            $this->_client = new Internal( $client_params );
         }
         else
         {
@@ -607,7 +617,7 @@ class Request implements HTTP_Request
             $this->_external = TRUE;
 
             // Setup the client
-            $this->_client = Request_External::factory( $client_params );
+            $this->_client = External::factory( $client_params );
         }
     }
 

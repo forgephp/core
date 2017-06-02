@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Log;
 
 /** 
  * Log_File
@@ -9,7 +11,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Log_File extends Log_Writer
+class File extends Writer
 {
 	// Directory to place log files in
 	protected $_directory;

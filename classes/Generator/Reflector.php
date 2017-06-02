@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Generator;
 
 /**
  * This class provides some shortcuts for handling basic Reflection details
@@ -10,7 +12,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Generator_Reflector
+class Reflector
 {
 	// The supported source types
 	const TYPE_CLASS     = 'class';

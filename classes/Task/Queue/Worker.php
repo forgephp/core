@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Task\Queue;
+
+use Forge\Minion\Task;
 
 /**
  * Tools for processing queued jobs
@@ -27,7 +31,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Task_Queue_Worker extends Minion_Task
+class Worker extends Task
 {
     protected $_options = array(
         'queue'        => 'default',

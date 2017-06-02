@@ -1,4 +1,9 @@
-<?php defined('SYSPATH') or die('No direct script access.');
+<?php
+
+namespace Forge\Controller;
+
+use Forge\LogReader\Controller as LogReader_Controller
+
 /**
  * LogReader
  * 
@@ -10,7 +15,7 @@
  * @copyright   (c) 2014 Milan Magyar
  * @license     MIT
  */
-class Controller_LogReaderAPI extends LogReader_Controller
+class LogReaderAPI extends LogReader_Controller
 {
 	// API response
 	protected $data;

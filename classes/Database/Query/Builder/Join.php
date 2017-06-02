@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Database\Query\Builder;
+
+use Forge\Database\Query\Builder;
 
 /**
  * Database query builder for JOIN statements.
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Database_Query_Builder_Join extends Database_Query_Builder
+class Join extends Builder
 {
 	// Type of JOIN
 	protected $_type;

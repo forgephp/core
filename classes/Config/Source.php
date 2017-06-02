@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Config;
 
 /**
  * Base Config source Interface
@@ -11,4 +13,4 @@
  * @copyright  (c) 2017 SuperFan, Inc.
  */
 
-interface Config_Source {}
+interface Source {}

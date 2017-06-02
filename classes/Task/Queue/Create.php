@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Task\Queue;
+
+use Forge\Minion\Task;
 
 /**
  * installs the queue database table
@@ -15,7 +19,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Task_Queue_Create extends Minion_Task
+class Create extends Task
 {
     public function _execute( Array $params )    
     {

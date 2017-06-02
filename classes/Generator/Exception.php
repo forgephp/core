@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Generator;
+
+use Forge\Exception as Forge_Exception;
 
 /**
  * Generator Exception
@@ -9,4 +13,4 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Generator_Exception extends Foundation_Exception {}
+class Exception extends Forge_Exception {}

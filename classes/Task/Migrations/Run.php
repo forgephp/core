@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Task\Migrations;
+
+use Forge\Minion\Task;
 
 /**
  * Minion task to run migrations
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Task_Migrations_run extends Minion_Task
+class Run extends Task
 {
     /**
      * Task to run pending migrations

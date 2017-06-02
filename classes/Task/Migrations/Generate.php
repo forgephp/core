@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Task\Migrations;
+
+use Forge\Minion\Task;
 
 /**
  * Minion task to generate a migration
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Task_Migrations_Generate extends Minion_Task
+class Generate extends Task
 {
     protected $_options = array(
         'name' => NULL,

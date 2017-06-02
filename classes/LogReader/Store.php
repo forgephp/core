@@ -1,4 +1,7 @@
-<?php defined('SYSPATH') or die('No direct script access.');
+<?php
+
+namespace Forge\LogReader;
+
 /**
  * LogReader
  * 
@@ -10,7 +13,7 @@
  * @copyright   (c) 2014 Milan Magyar
  * @license     MIT
  */
-abstract class Kohana_LogReader_Store
+abstract class Store
 {
 	/**
 	 * LogReader_Store config

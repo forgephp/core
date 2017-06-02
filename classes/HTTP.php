@@ -1,4 +1,12 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge;
+
+use \Forge\Request;
+use \Forge\Response;
+use \Forge\HTTP\Header;
+use \Forge\HTTP\Exception;
+use \Forge\HTTP\Exception\Redirect;
 
 /**
  * Contains the most low-level helpers methods in Foundation:
@@ -29,11 +37,11 @@ abstract class HTTP
      */
     public static function redirect( $uri='', $code=302 )
     {
-        $e = HTTP_Exception::factory( $code );
+        $e = Exception::factory( $code );
 
-        if( ! $e instanceof HTTP_Exception_Redirect )
+        if( ! $e instanceof Redirect )
         {
-            throw new Foundation_Exception( 'Invalid redirect code \':code\'', array( ':code' => $code ));
+            throw new \Forge\Foundation\Exception( 'Invalid redirect code \':code\'', array( ':code' => $code ));
         }
 
         throw $e->location( $uri );
@@ -76,7 +84,7 @@ abstract class HTTP
         if( $request->headers( 'if-none-match' ) && (string) $request->headers( 'if-none-match' ) === $etag )
         {
             // No need to send data again
-            throw HTTP_Exception::factory( 304 )->headers( 'etag', $etag );
+            throw Exception::factory( 304 )->headers( 'etag', $etag );
         }
 
         return $response;
@@ -96,7 +104,7 @@ abstract class HTTP
             // Use the fast method to parse header string
             $headers = version_compare( phpversion( 'http' ), '2.0.0', '>=' ) ? \http\Header::parse($header_string) : http_parse_headers( $header_string );
 
-            return new HTTP_Header( $headers );
+            return new Header( $headers );
         }
 
         // Otherwise we use the slower PHP parsing
@@ -136,7 +144,7 @@ abstract class HTTP
         }
 
         // Return the headers
-        return new HTTP_Header( $headers );
+        return new Header( $headers );
     }
 
     /**
@@ -155,7 +163,7 @@ abstract class HTTP
         if( function_exists( 'apache_request_headers' ) )
         {
             // Return the much faster method
-            return new HTTP_Header( apache_request_headers() );
+            return new Header( apache_request_headers() );
         }
 
         // If the PECL HTTP tools are installed
@@ -164,7 +172,7 @@ abstract class HTTP
             // Return the much faster method
             $headers = version_compare( phpversion( 'http' ), '2.0.0', '>=') ? \http\Env::getRequestHeader() : http_get_request_headers();
 
-            return new HTTP_Header($headers);
+            return new Header($headers);
         }
 
         // Setup the output
@@ -194,7 +202,7 @@ abstract class HTTP
             $headers[str_replace( '_', '-', substr( $key, 5 ) )] = $value;
         }
 
-        return new HTTP_Header( $headers );
+        return new Header( $headers );
     }
 
     /**

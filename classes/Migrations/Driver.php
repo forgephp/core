@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Migrations;
 
 /**
  * Miration driver abstract class
@@ -8,7 +10,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-abstract class Migrations_Driver
+abstract class Driver
 {
 	/**
 	 * Valid types

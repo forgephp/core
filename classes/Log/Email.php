@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Log;
 
 /** 
  * Log Email
@@ -9,7 +11,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Log_Email extends Log_Writer
+class Email extends Writer
 {
 	protected $subject;
 	protected $to;

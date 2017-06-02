@@ -1,3 +1,5 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
 
-class View_Exception extends Foundation_Exception {}
+namespace Forge\View;
+
+class Exception extends \Forge\Exception {}

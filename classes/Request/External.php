@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Request;
+
+use Forge\Request\Client;
 
 /**
  * Request_External provides a wrapper for all external request
@@ -20,7 +24,7 @@
  * @copyright  (c) 2017 SuperFan, Inc.
  * @uses       [PECL HTTP](http://php.net/manual/en/book.http.php)
  */
-abstract class Request_External extends Request_Client
+abstract class External extends Client
 {
     /**
      * Use:

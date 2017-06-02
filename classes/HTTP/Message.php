@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\HTTP;
 
 /**
  * The HTTP Interaction interface providing the core HTTP methods that
@@ -9,7 +11,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-interface HTTP_Message
+interface Message
 {
     /**
      * Gets or sets the HTTP protocol. The standard protocol to use

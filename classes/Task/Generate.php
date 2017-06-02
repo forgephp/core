@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Task;
+
+use Forge\Minion\Task;
 
 /**
  * Generates application and module files from templates using different
@@ -40,7 +44,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Task_Generate extends Minion_Task
+class Generate extends Task
 {
 	/**
 	 * The task options that apply to all generator tasks

@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Model;
+
+use Forge\ORM;
 
 /**
  * Queue
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Model_Job extends ORM
+class Job extends ORM
 {
     /**
      * Created at datetime

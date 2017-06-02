@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Database\Query\Result;
+
+use Forge\Database\Result;
 
 /**
  * Object used for caching the results of select queries.
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Database_Result_Cached extends Database_Result
+class Cached extends Result
 {
 	public function __construct( array $result, $sql, $as_object = NULL )
 	{

@@ -1,4 +1,10 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Foundation;
+
+use Forge\View;
+use Forge\Response;
+use Forge\Foundation;
 
 /** 
  * Foundation exception class.
@@ -8,7 +14,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Foundation_Exception extends Exception
+class Exception extends \Exception
 {
     /**
      * @var  array  PHP error code => human readable name
@@ -38,9 +44,6 @@ class Foundation_Exception extends Exception
     /**
      * Creates a new translated exception.
      *
-     *     throw new Kohana_Exception('Something went terrible wrong, :user',
-     *         array(':user' => $user));
-     *
      * @param   string          $message    error message
      * @param   array           $variables  translation variables
      * @param   integer|string  $code       the exception code
@@ -50,7 +53,7 @@ class Foundation_Exception extends Exception
     public function __construct( $message="", array $variables=NULL, $code=0, Exception $previous=NULL )
     {
         // Set the message
-        $message = __( $message, $variables );
+        $message = \__( $message, $variables );
 
         // Pass the message and integer code to the parent
         parent::__construct( $message, (int) $code, $previous );

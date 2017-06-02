@@ -1,4 +1,10 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Task;
+
+use Forge\View;
+use Forge\Foundation;
+use Forge\Minion\Task;
 
 /**
  * Help task to display general instructons and list all tasks
@@ -8,7 +14,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Task_Help extends Minion_Task
+class Help extends Task
 {
 	/**
 	 * Generates a help list for all tasks

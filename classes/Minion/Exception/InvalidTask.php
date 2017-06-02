@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Minion\Exception;
+
+use Forge\Minion\Exception;
 
 /**
  * Invalid Task Exception
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Minion_Exception_InvalidTask extends Minion_Exception
+class InvalidTask extends Exception
 {
 	public function format_for_cli()
 	{

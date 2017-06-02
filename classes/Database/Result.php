@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Database;
 
 /**
  * Database result wrapper.
@@ -8,7 +10,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-abstract class Database_Result implements Countable, Iterator, SeekableIterator, ArrayAccess
+abstract class Result implements \Countable, \Iterator, \SeekableIterator, \ArrayAccess
 {
 	// Executed SQL for this result
 	protected $_query;

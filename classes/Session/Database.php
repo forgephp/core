@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Session;
+
+use Forge\Session;
 
 /**
  * Database-based session class.
@@ -18,7 +22,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Session_Database extends Session
+class Database extends Session
 {
 	// Database instance
 	protected $_db;

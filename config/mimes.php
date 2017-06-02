@@ -1,4 +1,4 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
 
 /**
  * A list of mime types. Our list is generally more complete and accurate than

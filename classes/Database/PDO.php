@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Database;
+
+use Forge\Database;
 
 /**
  * PDO database connection.
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Database_PDO extends Database
+class PDO extends Database
 {
 	// PDO uses no quoting for identifiers
 	protected $_identifier = '';

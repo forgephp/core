@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Controller;
+
+use Forge\Controller;
 
 /**
  * Abstract controller class for automatic templating.
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-abstract class Controller_Template extends Controller
+abstract class Template extends Controller
 {
 	/**
 	 * @var  View  page template

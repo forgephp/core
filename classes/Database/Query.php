@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Database;
 
 /**
  * Database query wrapper.  See [Parameterized Statements](database/query/parameterized) for usage and examples.
@@ -8,7 +10,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Database_Query
+class Query
 {
 	// Query type
 	protected $_type;

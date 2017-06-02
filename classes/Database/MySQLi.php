@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Database;
+
+use Forge\Database;
 
 /**
  * MySQLi database connection.
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Database_MySQLi extends Database
+class MySQLi extends Database
 {
 	// Database in use by each connection
 	protected static $_current_databases = array();

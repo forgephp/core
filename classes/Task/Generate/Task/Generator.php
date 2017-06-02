@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Task\Generate\Task;
+
+use Forge\Task\Generate;
 
 /**
  * Creates custom generator tasks that can be evoked with generate:TASK.
@@ -45,7 +49,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Task_Generate_Task_Generator extends Task_Generate
+class Generator extends Generate
 {
 	/**
 	 * @var  array  The task options

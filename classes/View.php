@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge;
+
+use Forge\Foundation\View\Exception as View_Exception;
 
 /**
  * Acts as an object wrapper for HTML pages with embedded PHP, called "views".
@@ -67,7 +71,7 @@ class View
             // Load the view within the current scope
             include $view_filename;
         }
-        catch( Exception $e )
+        catch( \Exception $e )
         {
             // Delete the output buffer
             ob_end_clean();
@@ -100,7 +104,7 @@ class View
      */
     public static function set_global( $key, $value=NULL )
     {
-        if( is_array( $key ) || $key instanceof Traversable )
+        if( is_array( $key ) || $key instanceof \Traversable )
         {
             foreach( $key as $name => $value )
             {
@@ -234,7 +238,7 @@ class View
         {
             return $this->render();
         }
-        catch( Exception $e )
+        catch( \Exception $e )
         {
             /**
              * Display the exception message.
@@ -295,7 +299,7 @@ class View
      */
     public function set( $key, $value=NULL )
     {
-        if( is_array( $key ) || $key instanceof Traversable )
+        if( is_array( $key ) || $key instanceof \Traversable )
         {
             foreach( $key as $name => $value )
             {

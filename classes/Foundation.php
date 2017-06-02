@@ -1,4 +1,10 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge;
+
+use Forge\Log;
+use Forge\Config;
+use Forge\Foundation\Exception;
 
 /** 
  * Foundation
@@ -15,8 +21,8 @@
 class Foundation
 {
     // Release version and codename
-    const VERSION  = '6.0.0';
-    const CODENAME = 'turf';
+    const VERSION  = '1.0';
+    const CODENAME = 'slag';
 
     // Common environment type constants for consistency and convenience
     const PRODUCTION  = 10;
@@ -25,7 +31,7 @@ class Foundation
     const DEVELOPMENT = 40;
     
     // Security check that is added to all generated PHP files
-    const FILE_SECURITY = '<?php defined(\'BASE_DIR\') OR die(\'No direct script access.\');';
+    const FILE_SECURITY = "<?php\nnamespace App;\n";
     
     // Format of cache files: header, cache name, and data
     const FILE_CACHE = ":header \n\n// :name\n\n:data\n";
@@ -118,7 +124,7 @@ class Foundation
     /**
      * @var  array   Include paths that are used to find files
      */
-    protected static $_paths = array( APPDIR, FOUNDATION );
+    protected static $_paths = array( \FORGE\APP, \FORGE\FOUNDATION );
     
     /**
      * @var  array   File path cache, used when caching is true
@@ -178,10 +184,10 @@ class Foundation
         if( self::$errors === TRUE )
         {
             // Enable Foundation exception handling, adds stack traces and error source.
-            set_exception_handler( array( 'Foundation_Exception', 'handler' ) );
+            //set_exception_handler( array( '\Forge\Foundation\Exception', 'handler' ) );
 
             // Enable Foundation error handling, converts all PHP errors to exceptions.
-            set_error_handler( array( 'Foundation', 'error_handler' ) );
+            //set_error_handler( array( '\Forge\Foundation', 'error_handler' ) );
         }
 
         // Enable xdebug parameter collection in development mode to improve fatal stack traces.
@@ -191,7 +197,7 @@ class Foundation
         }
 
         // Enable the Foundation shutdown handler, which catches E_FATAL errors.
-        register_shutdown_function( array( 'Foundation', 'shutdown_handler' ) );
+        //register_shutdown_function( array( '\Forge\Foundation', 'shutdown_handler' ) );
 
         if( ini_get( 'register_globals' ) )
         {
@@ -495,7 +501,7 @@ class Foundation
             if( is_dir( $path . $directory ) )
             {
                 // Create a new directory iterator
-                $dir = new DirectoryIterator( $path . $directory );
+                $dir = new \DirectoryIterator( $path . $directory );
 
                 foreach( $dir as $file )
                 {
@@ -648,6 +654,11 @@ class Foundation
         return $value;
     }
 
+    public static function message( $string )
+    {
+        return false;
+    }
+
     /**
      * PHP error handler, converts all errors into ErrorExceptions. This handler
      * respects error_reporting settings.
@@ -716,7 +727,7 @@ class Foundation
      */
     public static function version()
     {
-        return 'SuperFan Foundation v' . self::VERSION . ' (' . self::CODENAME . ')';
+        return 'ForgePHP v' . self::VERSION . ' (' . self::CODENAME . ')';
     }
 
 }

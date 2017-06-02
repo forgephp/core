@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Database\MySQL;
+
+use Forge\Database\Result as Database_Result;
 
 /**
  * MySQL Database result.
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Database_MySQL_Result extends Database_Result
+class Result extends Database_Result
 {
 	protected $_internal_row = 0;
 

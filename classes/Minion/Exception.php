@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Minion;
+
+use Forge\Exception as Forge_Exception;
 
 /** 
  * Minion Exception
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Minion_Exception extends Foundation_Exception
+class Exception extends Forge_Exception
 {
 	/**
 	 * Inline exception handler, displays the error message, source of the
@@ -20,20 +24,20 @@ class Minion_Exception extends Foundation_Exception
 	 * @param   Exception   $e
 	 * @return  boolean
 	 */
-	public static function handler( Exception $e )
+	public static function handler( \Exception $e )
 	{
 		try
 		{
 			// Log the exception
-			Foundation_Exception::log( $e );
+			Forge_Exception::log( $e );
 
-			if( $e instanceof Minion_Exception )
+			if( $e instanceof Exception )
 			{
 				echo $e->format_for_cli();
 			}
 			else
 			{
-				echo Foundation_Exception::text( $e );
+				echo Forge_Exception::text( $e );
 			}
 
 			$exit_code = $e->getCode();
@@ -46,13 +50,13 @@ class Minion_Exception extends Foundation_Exception
 
 			exit( $exit_code );
 		}
-		catch( Exception $e )
+		catch( \Exception $e )
 		{
 			// Clean the output buffer if one exists
 			ob_get_level() and ob_clean();
 
 			// Display the exception text
-			echo Foundation_Exception::text( $e ), "\n";
+			echo Forge_Exception::text( $e ), "\n";
 
 			// Exit with an error status
 			exit(1);
@@ -61,6 +65,6 @@ class Minion_Exception extends Foundation_Exception
 
 	public function format_for_cli()
 	{
-		return Foundation_Exception::text( $this );
+		return Forge_Exception::text( $this );
 	}
 }

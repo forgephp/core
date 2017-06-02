@@ -1,4 +1,10 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge;
+
+use \Forge\Arr;
+use \Forge\Request;
+use \Forge\Foundation;
 
 /**
  * Route
@@ -127,93 +133,6 @@ class Route
 		throw new HTTP_Exception( '404', 'No route matches: :method -> :url', array( ':method' => $_SERVER['REQUEST_METHOD'], ':url' => $url ) );
 	}
 	
-	//this will execute whatever code you want just before it executes the route code
-	//this is especially useful when you want certain code executed every time, no matter
-	//which page, function, or class is called.
-	//it will only execute once per page load.
-	public static function execute( $cmd )
-	{
-		$class = @explode( '->', $cmd );
-
-		if( class_exists( $class[0] ) )
-		{
-		    $return = new $class[0];
-		    $return->$class[1]();
-		}
-		else if( is_callable( $cmd ) )
-		{
-			//it's a real or anonymous function
-			$cmd();
-		}
-		else if( strpos( $cmd, '.php' ) )
-		{
-		    //it's a php page
-		    global $vars;
-
-		    if( file_exists( 'pages/' . $cmd ) )
-		    {
-				include( 'pages/' . $cmd );
-			}
-			else if( file_exists( $cmd ) )
-			{
-		    	include( $cmd );
-		    }
-		    else
-		    {
-			    throw new HTTP_Exception( '404', 'Sorry, I could not find: :cmd', array( ':cmd' => $cmd ) );
-		    }
-		}
-		else
-		{
-			throw new HTTP_Exception( '400', 'Sorry, but I\'m not sure what to do with: :cmd', array( ':cmd' => $cmd ) );
-		}
-	}
-	
-	public static function redirect( string $cmd )
-	{
-		return HTTP::redirect( $cmd, 302 );
-	}
-	
-	public static function checkHTTPS()
-	{
-		if( $_SERVER['HTTP_HOST'] == 'app.superfanu.com' )
-		{
-			if( $_SERVER['HTTPS']=='on' )
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-		else
-		{
-			return true;
-		}
-	}
-	
-	public static function linkToHTTPS()
-	{
-		return 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-	}
-	
-	public static function forceHTTPS()
-	{
-		if( $_SERVER['HTTP_HOST'] == 'app.superfanu.com' )
-		{
-			if( $_POST )
-			{
-				throw new HTTP_Exception( '405', 'You cannot redirect because there is a POST request.' );
-			}
-
-			if( $_SERVER['HTTPS'] != 'on' )
-			{
-				self::redirect( str_replace( 'http://', 'https://', $_SERVER['REDIRECT_SCRIPT_URI'] ) );
-			}
-		}
-	}
-
 	/**
 	 * Returns the compiled regular expression for the route. This translates
 	 * keys and optional groups to a proper PCRE regular expression.
@@ -268,7 +187,7 @@ class Route
 		$url = str_replace( '@', '', $url );
 		$url = trim( $url, '/' );
 
-		if( $exec instanceof Closure )
+		if( $exec instanceof \Closure )
 		{
 			$this->_exec = $exec;
 		}

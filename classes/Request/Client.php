@@ -1,4 +1,9 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Request;
+
+use Forge\Request;
+use Forge\Response;
 
 /**
  * Request Client. Processes a Request and handles HTTP_Caching if
@@ -10,7 +15,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-abstract class Request_Client
+abstract class Client
 {
     /**
      * @var    Cache  Caching library for request caching

@@ -1,4 +1,6 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Config;
 
 /**
  * The group wrapper acts as an interface to all the config directives
@@ -13,7 +15,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Config_Group extends ArrayObject
+class Group extends \ArrayObject
 {
     /**
      * Reference the config object that created this group

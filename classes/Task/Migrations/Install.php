@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Task\Migrations;
+
+use Forge\Minion\Task;
 
 /**
  * Minion task to install the migrations table
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Task_Migrations_Install extends Minion_Task
+class Install extends Task
 {
     protected $_options = array(
         'db' => Database::$default,

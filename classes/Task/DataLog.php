@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Task;
+
+use Forge\Minion\Task;
 
 /**
  * DataLog Task
@@ -9,7 +13,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Task_DataLog extends Minion_Task
+class DataLog extends Task
 {
 	protected function _execute( array $params )
 	{

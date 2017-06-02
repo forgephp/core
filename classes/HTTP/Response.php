@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\HTTP;
+
+use Forge\HTTP\Message;
 
 /**
  * A HTTP Response specific interface that adds the methods required
@@ -10,7 +14,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-interface HTTP_Response extends HTTP_Message
+interface Response extends Message
 {
     /**
      * Sets or gets the HTTP status from this response.

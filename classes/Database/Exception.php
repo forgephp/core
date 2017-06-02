@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Database;
+
+use Forge\Exception as Forge_Exception;
 
 /**
  * Database exceptions.
@@ -8,4 +12,4 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Database_Exception extends Foundation_Exception {}
+class Exception extends Forge_Exception {}

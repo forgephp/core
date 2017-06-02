@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Task\Generate;
+
+use Forge\Task\Generate as Task_Generate;
 
 /**
  * Generates application tasks from templates. The task can be created in 
@@ -44,7 +48,7 @@
  * @copyright  (c) 2016 - 2017 SuperFan, Inc.
  * @license    All rights reserved
  */
-class Task_Generate_Task extends Task_Generate
+class Task extends Task_Generate
 {
 	/**
 	 * @var  array  The task options

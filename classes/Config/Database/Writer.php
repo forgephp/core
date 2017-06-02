@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Config\Database;
+
+use Forge\Config\Writer as Config_Writer;
 
 /**
  * Database writer for the config system
@@ -17,7 +21,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-class Config_Database_Writer extends Config_Database_Reader implements Config_Writer
+class Writer extends Reader implements Config_Writer
 {
 	protected $_loaded_keys = array();
 

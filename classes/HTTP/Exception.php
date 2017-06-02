@@ -1,6 +1,9 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
 
-abstract class HTTP_Exception extends Foundation_Exception
+namespace Forge\HTTP;
+use Forge\Foundation\Exception as Foundation_Exception;
+
+abstract class Exception extends Foundation_Exception
 {
     /**
      * @var  int        http status code
@@ -22,7 +25,7 @@ abstract class HTTP_Exception extends Foundation_Exception
      */
     public static function factory( $code, $message = NULL, array $variables = NULL, Exception $previous = NULL )
     {
-        $class = 'HTTP_Exception_' . $code;
+        $class = '\Forge\HTTP\Exception\Exception' . $code;
 
         return new $class( $message, $variables, $previous );
     }

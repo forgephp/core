@@ -1,4 +1,8 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\Database\Query\Builder;
+
+use Forge\Database\Query\Builder;
 
 /**
  * Database query builder for WHERE statements.
@@ -8,7 +12,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-abstract class Database_Query_Builder_Where extends Database_Query_Builder
+abstract class Where extends Builder
 {
 	// WHERE ...
 	protected $_where = array();

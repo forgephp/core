@@ -1,4 +1,17 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge;
+
+use Forge\Arr;
+use Forge\Log;
+use Forge\HTTP;
+use Forge\File;
+use Forge\Cookie;
+use Forge\Request;
+use Forge\Foundation;
+use Forge\HTTP\Header;
+use Forge\Foundation\Exception;
+use Forge\HTTP\Response as HTTP_Response;
 
 /**
  * Response wrapper. Created as the result of any [Request] execution
@@ -118,7 +131,7 @@ class Response implements HTTP_Response
      */
     public function __construct( array $config=array() )
     {
-        $this->_header = new HTTP_Header;
+        $this->_header = new Header;
 
         foreach( $config as $key => $value )
         {
@@ -214,7 +227,7 @@ class Response implements HTTP_Response
         }
         else
         {
-            throw new Foundation_Exception( __METHOD__ . ' unknown status value : :value', array( ':value' => $status ) );
+            throw new Exception( __METHOD__ . ' unknown status value : :value', array( ':value' => $status ) );
         }
     }
 
@@ -415,7 +428,7 @@ class Response implements HTTP_Response
         {
             if( empty( $download ) )
             {
-                throw new Foundation_Exception( 'Download name must be provided for streaming files' );
+                throw new Exception( 'Download name must be provided for streaming files' );
             }
 
             // Temporary files will automatically be deleted
@@ -468,7 +481,7 @@ class Response implements HTTP_Response
 
         if( ! is_resource( $file ) )
         {
-            throw new Foundation_Exception( 'Could not read file to send: :file', array( ':file' => $download ) );
+            throw new Exception( 'Could not read file to send: :file', array( ':file' => $download ) );
         }
 
         // Inline or download?
@@ -564,10 +577,10 @@ class Response implements HTTP_Response
                 // Attempt to remove the file
                 unlink( $filename );
             }
-            catch( Exception $e )
+            catch( \Exception $e )
             {
                 // Create a text version of the exception
-                $error = Foundation_Exception::text( $e );
+                $error = Exception::text( $e );
 
                 if( is_object( Foundation::$log ) )
                 {
@@ -654,7 +667,7 @@ class Response implements HTTP_Response
     {
         if( $this->_body === '' )
         {
-            throw new Foundation_Exception( 'No response yet associated with request - cannot auto generate resource ETag' );
+            throw new Exception( 'No response yet associated with request - cannot auto generate resource ETag' );
         }
 
         // Generate a unique hash for the response
