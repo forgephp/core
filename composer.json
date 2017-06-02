@@ -1,5 +1,5 @@
 {
-    "name": "forgephp/foundation",
+    "name": "forge/core",
     "description": "The ForgePHP Framework.",
     "keywords": ["framework", "forgephp", "forge", "foundation"],
     "license": "MIT",
