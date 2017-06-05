@@ -1,10 +1,13 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
 
-class HTTP_Exception_301 extends HTTP_Exception_Redirect {
+namespace Forge\HTTP\Exception;
 
+use Forge\HTTP\Exception\Redirect;
+
+class HTTP_301 extends Redirect
+{
 	/**
 	 * @var   integer    HTTP 301 Moved Permanently
 	 */
 	protected $_code = 301;
-
 }

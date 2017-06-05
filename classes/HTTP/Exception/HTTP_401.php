@@ -1,7 +1,11 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
 
-class HTTP_Exception_401 extends HTTP_Exception_Expected {
+namespace Forge\HTTP\Exception;
 
+use Forge\HTTP\Exception\Expected;
+
+class HTTP_401 extends Expected
+{
 	/**
 	 * @var   integer    HTTP 401 Unauthorized
 	 */
@@ -39,5 +43,4 @@ class HTTP_Exception_401 extends HTTP_Exception_Expected {
 
 		return TRUE;
 	}
-
 }

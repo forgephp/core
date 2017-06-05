@@ -1,10 +1,13 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
 
-class HTTP_Exception_307 extends HTTP_Exception_Redirect {
+namespace Forge\HTTP\Exception;
 
+use Forge\HTTP\Exception\Redirect;
+
+class HTTP_307 extends Redirect
+{
 	/**
 	 * @var   integer    HTTP 307 Temporary Redirect
 	 */
 	protected $_code = 307;
-
 }

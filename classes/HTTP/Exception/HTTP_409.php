@@ -1,10 +1,13 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
 
-class HTTP_Exception_409 extends HTTP_Exception {
+namespace Forge\HTTP\Exception;
 
+use Forge\HTTP\Exception;
+
+class HTTP_409 extends Exception
+{
 	/**
 	 * @var   integer    HTTP 409 Conflict
 	 */
 	protected $_code = 409;
-
 }

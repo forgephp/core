@@ -1,10 +1,13 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
 
-class HTTP_Exception_303 extends HTTP_Exception_Redirect {
+namespace Forge\HTTP\Exception;
 
+use Forge\HTTP\Exception\Redirect;
+
+class HTTP_303 extends Redirect
+{
 	/**
 	 * @var   integer    HTTP 303 See Other
 	 */
 	protected $_code = 303;
-
 }

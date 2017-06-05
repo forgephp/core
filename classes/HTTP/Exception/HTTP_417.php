@@ -1,10 +1,13 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
 
-class HTTP_Exception_417 extends HTTP_Exception {
+namespace Forge\HTTP\Exception;
 
+use Forge\HTTP\Exception;
+
+class HTTP_417 extends Exception
+{
 	/**
 	 * @var   integer    HTTP 417 Expectation Failed
 	 */
 	protected $_code = 417;
-
 }

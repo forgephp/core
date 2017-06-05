@@ -1,4 +1,11 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\HTTP\Exception;
+
+use Forge\URL;
+use Forge\Response;
+use Forge\Foundation;
+use Forge\HTTP\Exception as HTTP_Exception;
 
 /**
  * "Expected" HTTP exception class. Used for all [HTTP_Exception]'s where a standard
@@ -11,7 +18,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-abstract class HTTP_Exception_Expected extends HTTP_Exception
+abstract class Expected extends HTTP_Exception
 {
 	/**
 	 * @var  Response   Response Object
@@ -28,7 +35,7 @@ abstract class HTTP_Exception_Expected extends HTTP_Exception
 	 * @param   array   $variables  translation variables
 	 * @return  void
 	 */
-	public function __construct( $message = NULL, array $variables = NULL, Exception $previous = NULL )
+	public function __construct( $message = NULL, array $variables = NULL, \Exception $previous = NULL )
 	{
 		parent::__construct( $message, $variables, $previous );
 

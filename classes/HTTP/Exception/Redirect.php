@@ -1,4 +1,11 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
+
+namespace Forge\HTTP\Exception;
+
+use Forge\URL;
+use Forge\Exception;
+use Forge\Foundation;
+use Forge\HTTP\Exception\Expected;
 
 /**
  * Redirect HTTP exception class. Used for all HTTP_Exception's where the status
@@ -11,7 +18,7 @@
  * @author     Zach Jenkins <zach@superfanu.com>
  * @copyright  (c) 2017 SuperFan, Inc.
  */
-abstract class HTTP_Exception_Redirect extends HTTP_Exception_Expected
+abstract class Redirect extends Expected
 {
 	/**
 	 * Specifies the URI to redirect to.
@@ -46,7 +53,7 @@ abstract class HTTP_Exception_Redirect extends HTTP_Exception_Expected
 	{
 		if( $this->headers( 'location' ) === NULL )
 		{
-			throw new Foundation_Exception( 'A \'location\' must be specified for a redirect' );
+			throw new Exception( 'A \'location\' must be specified for a redirect' );
 		}
 
 		return TRUE;

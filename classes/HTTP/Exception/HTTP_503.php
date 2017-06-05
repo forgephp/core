@@ -1,10 +1,13 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
 
-class HTTP_Exception_503 extends HTTP_Exception {
+namespace Forge\HTTP\Exception;
 
+use Forge\HTTP\Exception;
+
+class HTTP_503 extends Exception
+{
 	/**
 	 * @var   integer    HTTP 503 Service Unavailable
 	 */
 	protected $_code = 503;
-
 }

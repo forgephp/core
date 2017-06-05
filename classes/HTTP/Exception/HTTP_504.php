@@ -1,10 +1,13 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
 
-class HTTP_Exception_504 extends HTTP_Exception {
+namespace Forge\HTTP\Exception;
 
+use Forge\HTTP\Exception;
+
+class HTTP_504 extends Exception
+{
 	/**
 	 * @var   integer    HTTP 504 Gateway Timeout
 	 */
 	protected $_code = 504;
-
 }

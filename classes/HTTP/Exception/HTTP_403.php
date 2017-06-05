@@ -1,10 +1,13 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
 
-class HTTP_Exception_403 extends HTTP_Exception {
+namespace Forge\HTTP\Exception;
 
+use Forge\HTTP\Exception;
+
+class HTTP_403 extends Exception
+{
 	/**
 	 * @var   integer    HTTP 403 Forbidden
 	 */
 	protected $_code = 403;
-
 }

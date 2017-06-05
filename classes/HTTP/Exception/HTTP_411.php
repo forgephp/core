@@ -1,10 +1,13 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
 
-class HTTP_Exception_411 extends HTTP_Exception {
+namespace Forge\HTTP\Exception;
 
+use Forge\HTTP\Exception;
+
+class HTTP_411 extends Exception
+{
 	/**
 	 * @var   integer    HTTP 411 Length Required
 	 */
 	protected $_code = 411;
-
 }

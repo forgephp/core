@@ -1,10 +1,13 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
 
-class HTTP_Exception_502 extends HTTP_Exception {
+namespace Forge\HTTP\Exception;
 
+use Forge\HTTP\Exception;
+
+class HTTP_502 extends Exception
+{
 	/**
 	 * @var   integer    HTTP 502 Bad Gateway
 	 */
 	protected $_code = 502;
-
 }

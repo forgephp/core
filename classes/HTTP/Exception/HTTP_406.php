@@ -1,10 +1,13 @@
-<?php defined( 'FOUNDATION' ) or die( 'No direct script access.' );
+<?php
 
-class HTTP_Exception_406 extends HTTP_Exception {
+namespace Forge\HTTP\Exception;
 
+use Forge\HTTP\Exception;
+
+class HTTP_406 extends Exception
+{
 	/**
 	 * @var   integer    HTTP 406 Not Acceptable
 	 */
 	protected $_code = 406;
-
 }
