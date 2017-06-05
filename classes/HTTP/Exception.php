@@ -1,6 +1,7 @@
 <?php
 
 namespace Forge\HTTP;
+
 use Forge\Foundation\Exception as Foundation_Exception;
 
 abstract class Exception extends Foundation_Exception
@@ -25,7 +26,7 @@ abstract class Exception extends Foundation_Exception
      */
     public static function factory( $code, $message = NULL, array $variables = NULL, Exception $previous = NULL )
     {
-        $class = '\Forge\HTTP\Exception\Exception' . $code;
+        $class = '\Forge\HTTP\Exception\HTTP_' . $code;
 
         return new $class( $message, $variables, $previous );
     }
