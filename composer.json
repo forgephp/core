@@ -3,7 +3,7 @@
     "description": "The ForgePHP Framework.",
     "keywords": ["framework", "forgephp", "forge", "core"],
     "license": "MIT",
-    "homepage": "forgephp.github.io",
+    "homepage": "https://forgephp.github.io",
     "support": {
         "issues": "https://github.com/forgephp/forgephp/issues",
         "source": "https://github.com/forgephp/forgephp/"
